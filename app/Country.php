@@ -13,7 +13,7 @@ class Country extends Model
     ];
 
     public function songs() {
-        return $this->hasMany(song::class);
+        return $this->hasMany(Song::class);
     }
 
     public function artists() {
