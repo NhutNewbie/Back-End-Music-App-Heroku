@@ -35,6 +35,11 @@ Route::get('top-songs', 'Api\SongController@show_top_song');
 
 Route::get('all-songs', 'Api\SongController@index');
 
+Route::post('test-images', 'Api\UserController@test');
+// Route::post('test-images', function (Request $request) {
+//     dd($request->file("thing")->store('1Hidd_dZl8HWFOyoc-Rchny00bNjxbF-1', 'google'));
+// });
+
 
 Route::middleware('auth:api')->group(function () {
 

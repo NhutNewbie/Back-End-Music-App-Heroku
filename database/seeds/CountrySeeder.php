@@ -12,10 +12,10 @@ class CountrySeeder extends Seeder
     public function run()
     {
         DB::table('countrys')->insert([
-            ['id' => '1', 'name' => 'U.S-UK', 'image' => 'images/countrys/U.S.-UK.png', 'description' => ''],
-            ['id' => '2', 'name' => 'Việt Nam', 'image' => 'images/countrys/Viet-Nam.png', 'description' => ''],
-            ['id' => '3', 'name' => 'Japan', 'image' => 'images/countrys/Japan.png', 'description' => ''],
-            ['id' => '4', 'name' => 'Korea', 'image' => 'images/countrys/Korea.png', 'description' => ''],
+            ['id' => '1', 'name' => 'U.S-UK', 'image' => 'https://drive.google.com/uc?id=195Gz-pyyMd-X7kvLn9tL3h9zj58Kna09&export=media', 'description' => ''],
+            ['id' => '2', 'name' => 'Việt Nam', 'image' => 'https://drive.google.com/uc?id=1lub6gl6Q2fjnsNTzAMmRJdWhQoSfTeZ8&export=media', 'description' => ''],
+            ['id' => '3', 'name' => 'Japan', 'image' => 'https://drive.google.com/uc?id=1sofhZMpgRo4Efh9bEkfkVznl0Xao59Mn&export=media', 'description' => ''],
+            ['id' => '4', 'name' => 'Korea', 'image' => 'https://drive.google.com/uc?id=12nxALMoN3FIBL47Fafs45Udlg7vcXYb3&export=media', 'description' => ''],
             // ['id' => '5', 'name' => 'China', 'image' => 'images/countrys/China.png', 'description' => ''],
             // ['id' => '6', 'name' => 'Laos', 'image' => 'images/countrys/Laos.png', 'description' => ''],
         ]);

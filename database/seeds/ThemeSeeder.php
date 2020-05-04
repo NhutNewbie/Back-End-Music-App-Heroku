@@ -12,14 +12,14 @@ class ThemeSeeder extends Seeder
     public function run()
     {
         DB::table('themes')->insert([
-            ['id' => '1', 'name' => 'Hot US-UK', 'image' => 'images/themes/Hot-US-UK.png','description' => ''],
-            ['id' => '2', 'name' => 'Hot Viet Nam', 'image' => 'images/themes/Hot-Viet-Nam.png','description' => ''],
-            ['id' => '3', 'name' => 'Hot K-POP', 'image' => 'images/themes/K-POP.png','description' => ''],
-            ['id' => '4', 'name' => 'Movie Songs', 'image' => 'images/themes/Movie.png','description' => ''],
-            ['id' => '5', 'name' => 'EDM', 'image' => 'images/themes/EDM.png','description' => ''],
-            ['id' => '6', 'name' => 'Gyms Songs', 'image' => 'images/themes/GYM.png','description' => ''],
-            ['id' => '7', 'name' => 'Singer US-UK', 'image' => 'images/themes/Singer-US-UK.png','description' => ''],
-            ['id' => '8', 'name' => 'Singer Viet Nam', 'image' => 'images/themes/Singer-Viet-Nam.png','description' => ''],
+            ['id' => '1', 'name' => 'Hot US-UK', 'image' => 'https://drive.google.com/uc?id=1OhOso08_gmlzGt-JyV1XPfzkChrVRRQV&export=media','description' => ''],
+            ['id' => '2', 'name' => 'Hot Viet Nam', 'image' => 'https://drive.google.com/uc?id=1Ui6ixaYQ3RnknrCSEhqyWm4ekbCnbs9I&export=media','description' => ''],
+            ['id' => '3', 'name' => 'Hot K-POP', 'image' => 'https://drive.google.com/uc?id=1aW4Zi1LnzwY_sKrIkqDcgNyyzOFd3eS0&export=media','description' => ''],
+            ['id' => '4', 'name' => 'Movie Songs', 'image' => 'https://drive.google.com/uc?id=1SCgKOvQr_sRhAkbg1tLx2PAeut5CmcQs&export=media','description' => ''],
+            ['id' => '5', 'name' => 'EDM', 'image' => 'https://drive.google.com/uc?id=1mKegtEwPIwhRGzJ-2Qa1yWmE_2jz3mEI&export=media','description' => ''],
+            ['id' => '6', 'name' => 'Gyms Songs', 'image' => 'https://drive.google.com/uc?id=1RjcENpXVhSrB14DTCgxz4devXkdpYMVg&export=media', 'description' => ''],
+            ['id' => '7', 'name' => 'Singer US-UK', 'image' => 'https://drive.google.com/uc?id=1mKmZr9WRhpJZLQ__UXMTAVX5UDoW8yoR&export=media','description' => ''],
+            ['id' => '8', 'name' => 'Singer Viet Nam', 'image' => 'https://drive.google.com/uc?id=13xaCJKzGkB1YpSXnEaWq643Hq0tZXenv&export=media','description' => ''],
         ]);
     }
 }
