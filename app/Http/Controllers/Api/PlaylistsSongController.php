@@ -22,7 +22,6 @@ class PlaylistsSongController extends Controller
         ->leftJoin('lyrics', 'songs.id', '=' ,'lyrics.song_id')
         ->select('songs.id', 'songs.name as title', 'songs.image', 'songs.audio as data', 'artists.id as idArtist', 'artists.name as artist',
              'artists.avatar as avatarArtist', 'songs.views', 'songs.dowloads',  'songs.likes', 'lyrics.content as lyrics')
-        ->groupBy('songs.id')
         ->get();
 
         return response()->json(['data' => $playlistSongs], 200, [], JSON_NUMERIC_CHECK);
