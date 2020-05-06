@@ -10,11 +10,18 @@ use DB;
 class ArtistController extends Controller
 {
     public function index() {
+        // $artists = DB::table('artists')
+        // ->leftJoin('songs', 'songs.artist_id', '=' ,'artists.id')
+        // ->leftJoin('countrys', 'artists.country_id', '=' ,'countrys.id')
+        // ->select('artists.id', 'artists.name', 'artists.sex', 'artists.avatar', DB::raw('COUNT(artists.id) as count_songs'), 'countrys.name as country', 'artists.description')
+        // // ->groupBy('artists.id')
+        // // ->distinct('artists.id')
+        // ->get();
         $artists = DB::table('artists')
         ->leftJoin('songs', 'songs.artist_id', '=' ,'artists.id')
         ->leftJoin('countrys', 'artists.country_id', '=' ,'countrys.id')
-        ->select('artists.id', 'artists.name', 'artists.sex', 'artists.avatar', DB::raw('COUNT(artists.id) as count_songs'), 'countrys.name as country', 'artists.description')
-        ->over('')
+        ->select('artists.id', 'artists.name', 'artists.sex', 'artists.avatar', DB::raw('COUNT(DISTINCT artists.id) as count_songs'), 'countrys.name as country', 'artists.description')
+        ->groupBy('artists.id')
         ->get();
         return response()->json(['data' => $artists], 200, [], JSON_NUMERIC_CHECK);
     }
