@@ -14,7 +14,6 @@ class SlideshowController extends Controller
         ->orderBy('sort')
         ->where('enable', '1')
         ->get();
-        // $slideshows = Slideshow::all();
         return response()->json(['data' => $slideshows], 200, [], JSON_NUMERIC_CHECK);
     }
 }

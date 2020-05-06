@@ -58,7 +58,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('add-to-personal-playlists/{idPlaylist}/{idSong}', 'Api\PersonalPlaylistSongController@store');
     Route::get('personal-playlist-songs/{id}', 'Api\PersonalPlaylistSongController@index');
     Route::get('delete-personal-playlist-song/{idPlaylist}/{idSong}', 'Api\PersonalPlaylistSongController@delete');
-
+        
     Route::get('check-like/{idSong}', 'Api\LikeController@index');
     Route::get('like/{idSong}', 'Api\LikeController@store');
 
