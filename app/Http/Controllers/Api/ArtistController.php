@@ -15,7 +15,6 @@ class ArtistController extends Controller
         ->leftJoin('countrys', 'artists.country_id', '=' ,'countrys.id')
         ->select('artists.id', 'artists.name', 'artists.sex', 'artists.avatar', DB::raw('COUNT(artists.id) as count_songs'), 'countrys.name as country', 'artists.description')
         ->over('')
-        ->groupBy('artists.id')
         ->get();
         return response()->json(['data' => $artists], 200, [], JSON_NUMERIC_CHECK);
     }
@@ -36,4 +35,5 @@ class ArtistController extends Controller
         return response()->json(['data' => $songs], 200, [], JSON_NUMERIC_CHECK);
     }
     // /storage/*.key
+    // "post-install-cmd": [ "php artisan clear-compiled", "php artisan optimize", "chmod -R 777 storage", "php artisan passport:keys" ]
 }
