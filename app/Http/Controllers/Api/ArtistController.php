@@ -21,7 +21,7 @@ class ArtistController extends Controller
         ->leftJoin('songs', 'songs.artist_id', '=' ,'artists.id')
         ->leftJoin('countrys', 'artists.country_id', '=' ,'countrys.id')
         ->select('artists.id', 'artists.name', 'artists.sex', 'artists.avatar', DB::raw('COUNT(artists.id) as count_songs'), 'countrys.name as country', 'artists.description')
-        ->groupBy('artists.id')
+        ->groupBy('artists.id', 'countrys.name')
         ->get();
         return response()->json(['data' => $artists], 200, [], JSON_NUMERIC_CHECK);
     }
