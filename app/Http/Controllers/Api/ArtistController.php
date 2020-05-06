@@ -13,7 +13,8 @@ class ArtistController extends Controller
         $artists = DB::table('artists')
         ->leftJoin('songs', 'songs.artist_id', '=' ,'artists.id')
         ->leftJoin('countrys', 'artists.country_id', '=' ,'countrys.id')
-        ->select('artists.id', 'artists.name', 'artists.sex', 'artists.avatar', DB::raw('COUNT(artists.id) as count_songs'),'countrys.name as country', 'artists.description')
+        ->select('artists.id', 'artists.name', 'artists.sex', 'artists.avatar', DB::raw('COUNT(artists.id) as count_songs'), 'countrys.name as country', 'artists.description')
+        ->over('')
         ->groupBy('artists.id')
         ->get();
         return response()->json(['data' => $artists], 200, [], JSON_NUMERIC_CHECK);
@@ -34,4 +35,5 @@ class ArtistController extends Controller
         ->get();
         return response()->json(['data' => $songs], 200, [], JSON_NUMERIC_CHECK);
     }
+    // /storage/*.key
 }
