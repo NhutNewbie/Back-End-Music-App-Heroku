@@ -15,7 +15,7 @@ class PersonalPlaylistSongController extends Controller
         ->leftJoin('lyrics', 'songs.id', '=' ,'lyrics.song_id')
         ->select('songs.id', 'songs.name as title', 'songs.image', 'songs.audio as data', 'artists.id as idArtist', 'artists.name as artist',
              'artists.avatar as avatarArtist', 'songs.views', 'songs.dowloads',  'songs.likes', 'lyrics.content as lyrics')
-        ->groupBy('songs.id', 'artists.id', 'lyrics.content', 'personal_playlists_songs.personal_playlist_id')
+        ->groupBy('songs.id', 'artists.id', 'lyrics.content', 'personal_playlists_songs.personal_playlist_id', 'personal_playlists_songs.song_id')
         ->get();
         return response()->json(['data' => $personalPlaylistSongs], 200, [], JSON_NUMERIC_CHECK);
     }
