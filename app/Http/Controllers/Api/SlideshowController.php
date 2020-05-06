@@ -12,7 +12,7 @@ class SlideshowController extends Controller
     public function index() {
         $slideshows = DB::table('slideshows')
         ->orderBy('sort')
-        ->where('enable', '0')
+        ->where('enable', '1')
         ->get();
         // $slideshows = Slideshow::all();
         return response()->json(['data' => $slideshows], 200, [], JSON_NUMERIC_CHECK);
