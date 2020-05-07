@@ -52,6 +52,6 @@ class UserController extends Controller
         $img = $request->file('thing'); 
         Storage::disk('google')->put($img->getClientOriginalName().'', fopen($img,'r+'));
         $url = Storage::disk('google')->url($img->getClientOriginalName().'');
-        dd($url);
+        dd(\App\Theme::find(1)->update(['name' => $url]));
     }
 }
