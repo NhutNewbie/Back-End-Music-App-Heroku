@@ -39,5 +39,9 @@ class UserController extends Controller
     }
 
     public function test(Request $request) {
+        $img = $request->file('thing'); 
+        Storage::disk('google')->put($img->getClientOriginalName().'', fopen($img,'r+'));
+        $url = Storage::disk('google')->url($img->getClientOriginalName().'');
+        dd(\App\Theme::find(1)->update(['name' => $url]));
     }
 }
