@@ -22,9 +22,11 @@ class UserController extends Controller
 		]);
 
         if (request('file')) {
-            $imgPath = $request['file']->store('image/account','public');
+            $img = $request->file('file'); 
+            Storage::disk('google')->put($img->getClientOriginalName().'', fopen($img,'r+'));
+            $url = Storage::disk('google')->url($img->getClientOriginalName().'');
 
-            $imgPath = ['avatar' => $imgPath];
+            $imgPath = ['avatar' => $url];
         }
 
         $array_test = Auth::user()->update(array_merge([
