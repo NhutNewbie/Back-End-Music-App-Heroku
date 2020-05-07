@@ -39,19 +39,5 @@ class UserController extends Controller
     }
 
     public function test(Request $request) {
-        // $this->validate($request, [
-        //     'full_name' => '',
-        //     'file' => '',
-        // ]);
-        // $imgPath = $request['file']->store('images/accounts','public');
-        // // dd($request['file']);
-        // return response()->json($request['file'], 200);
-        // dd($request->file('file')->store('','google'));
-        // $results = $request->file("thing")->store('1Hidd_dZl8HWFOyoc-Rchny00bNjxbF-1', 'google');
-        // dd($results);
-        $img = $request->file('thing'); 
-        Storage::disk('google')->put($img->getClientOriginalName().'', fopen($img,'r+'));
-        $url = Storage::disk('google')->url($img->getClientOriginalName().'');
-        dd(\App\Theme::find(1)->update(['name' => $url]));
     }
 }
