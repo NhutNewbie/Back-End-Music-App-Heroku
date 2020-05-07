@@ -30,31 +30,13 @@ class GoogleDriveServiceProvider extends ServiceProvider
         // dd($client);
         \Storage::extend("google", function($app, $config) {
             $client = new \Google_Client;
-            $client->setClientId($config['clientId']);
-            $client->setClientSecret($config['clientSecret']);
-            $client->refreshToken($config['refreshToken']);
+            $client->setClientId('217370947719-c4704v7st4df9roftv8et14o3tv27klh.apps.googleusercontent.com');
+            $client->setClientSecret('NY7--o2sVfRDRQFEQOm6XPFk');
+            $client->refreshToken('1//04lh7Wrq7AIfICgYIARAAGAQSNwF-L9IrFZMq7f_9x6TSTIxs5wslbjy65HYOKDAlq6XuJkgzBXGgE5pu-lhi8jyrNCjLOpuVArc');
             $client->setAccessType('offline');
             $client->setApprovalPrompt('force');
-            // Refresh the token if it's expired.
-            if ($client->isAccessTokenExpired()) {
-                // save refresh token to some variable
-                $refreshTokenSaved = $client->getRefreshToken(); 
-                
-                // update access token
-                $client->fetchAccessTokenWithRefreshToken($refreshTokenSaved); 
-                
-                // pass access token to some variable
-                $accessTokenUpdated = $client->getAccessToken();
-                dd($accessTokenUpdated);
-                
-                // append refresh token
-                $accessTokenUpdated['refresh_token'] = $refreshTokenSaved;
-                
-                // save to file
-                file_put_contents($credentialsPath, json_encode($accessTokenUpdated)); 
-            }
             $service = new \Google_Service_Drive($client);
-            $adapter = new GoogleDriveAdapter($service, $config['folderId']);
+            $adapter = new GoogleDriveAdapter($service, '1zl3DzbRCPNbLXu2uN_MEWL1PHB1qWMSK');
 
             return new Filesystem($adapter);
         });
