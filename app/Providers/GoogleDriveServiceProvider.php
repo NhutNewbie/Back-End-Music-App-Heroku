@@ -45,6 +45,7 @@ class GoogleDriveServiceProvider extends ServiceProvider
                 
                 // pass access token to some variable
                 $accessTokenUpdated = $client->getAccessToken();
+                dd($accessTokenUpdated);
                 
                 // append refresh token
                 $accessTokenUpdated['refresh_token'] = $refreshTokenSaved;
