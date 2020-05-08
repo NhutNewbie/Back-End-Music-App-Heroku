@@ -26,5 +26,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Like::observe(LikeObserver::class);
+        if (env('KEY_PATH', false) !== false) {
+            Passport::loadKeysFrom(env('KEY_PATH'));
+        }
     }
 }
